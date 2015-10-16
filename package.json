@@ -1,0 +1,21 @@
+{
+  "name": "codeship",
+  "version": "0.0.1",
+  "description": "A node webservice which polls codeship regularly to check the state of project builds. It reports these results to an arduino board.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "codeship",
+    "johnny-five",
+    "ardunio"
+  ],
+  "author": "Jago Gibbons",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "^0.8.100",
+    "request": "^2.64.0"
+  }
+}
