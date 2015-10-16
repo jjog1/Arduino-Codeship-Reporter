@@ -3,6 +3,7 @@ var request = require('request');
 
 var board = new five.Board();
 
+// When the arduino board is ready then we can start polling codeship.
 board.on("ready", function() {
 
 var ardSetup = {
@@ -20,20 +21,24 @@ var ardSetup = {
 	}
 };
 
+// The codeship api for our account.
 var api_key = ''
-var baseurl = 'https://codeship.com/api/v1/projects/78236.json?api_key=' + api_key
+// The codeship project that we want to query.
+var project_id = ''
 
+var baseurl = 'https://codeship.com/api/v1/projects/' + project_id +'.json?api_key=' + api_key
 
+// We want to query codeship every 10 seconds.
 setInterval(query, 10000);
 
 function query(){
-
 	for( var instance in ardSetup ){
 		callCodeShip(instance);
 	}
 };
 
 function callCodeShip(instance){
+	// Completes the URL with the relevant branch name.
 	url = baseurl + "&branch=" + ardSetup[instance].branchname
 	request(url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
