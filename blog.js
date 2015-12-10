@@ -46,6 +46,7 @@ board.on("ready", function() {
 	// The call to Codeship
 	function callCodeShip(){
 		url = 'https://codeship.com/api/v1/projects/' + config.project_id +'.json?api_key=' + config.api_key
+		 + "&branch=" + config.branch_name 
 		request(url, function (error, response, body) {
 		  if (!error && response.statusCode == 200) {
 		    var fbResponse = JSON.parse(body)
