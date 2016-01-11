@@ -1,6 +1,6 @@
 {
   "name": "codeship",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A node webservice which polls codeship regularly to check the state of project builds. It reports these results to an arduino board.",
   "main": "index.js",
   "scripts": {
